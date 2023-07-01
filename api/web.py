@@ -15,7 +15,7 @@ def catch_all(path):
 def chart():
         print(request.args)
         key = request.args.get('key')
-        return Response("<h1>Flask</h1><p>You key: /%s</p><p>key=%s</p>" % (openai_api_key), mimetype="text/html")
+        return Response("<h1>Flask</h1><p>You key: </p><p>key=%s</p>" % (openai_api_key), mimetype="text/html")
     
 if __name__ == "__main__":
     app.run(debug = True)
