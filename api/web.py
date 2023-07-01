@@ -8,6 +8,7 @@ import json
 openai_api_key = os.getenv('OPENAI_API_KEY')
 openai.api_key = openai_api_key
 app = Flask(__name__)
+CORS(app)  # 添加这一行以允许跨域请求
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
