@@ -4,7 +4,7 @@ import openai
 from flask_cors import CORS
 from urllib.parse import unquote
 import json
-import prompt
+import api.prompt as prompt
 
 openai_api_key = os.getenv('OPENAI_API_KEY')
 openai.api_key = openai_api_key
