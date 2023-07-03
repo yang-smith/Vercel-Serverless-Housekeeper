@@ -27,5 +27,7 @@ system_message = f"""
 answer：作为专业管家的回答，
 action：检查所有智能设备的状态，，
 各种智能设备状态：由action推导而来，是一个确定的数值。
+
+最终只输出一个json
 """
 

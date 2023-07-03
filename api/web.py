@@ -55,4 +55,5 @@ def chatmesg():
         return jsonify(error=str(err)), 404
     
 if __name__ == "__main__":
+    print(prompt.system_message)
     app.run(debug = True)
