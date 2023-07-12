@@ -40,7 +40,7 @@ def backend():
 def post():
     try:
         data = request.get_json()
-
+        print(data)
         model = data.get('model', 'gpt-3.5-turbo')
         messages = data.get('messages')
         max_tokens = data.get('max_tokens', 1000)
