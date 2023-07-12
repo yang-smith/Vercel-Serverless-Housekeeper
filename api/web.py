@@ -35,6 +35,29 @@ def backend():
     except Exception as err:
         return jsonify(error=str(err)), 404
 
+
+@app.route("/api/v1/post", methods=["POST"])
+def post():
+    try:
+        data = request.get_json()
+
+        model = data.get('model', 'gpt-3.5-turbo')
+        messages = data.get('messages')
+        max_tokens = data.get('max_tokens', 1000)
+        temperature = data.get('temperature', 0.1)
+
+        response = openai.ChatCompletion.create(
+            model=model,
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
+        message = response['choices'][0]['message']['content']
+        return jsonify(message=message)
+    except Exception as err:
+        return jsonify(error=str(err)), 400
+
+
 @app.route("/api/chatmesg", methods=["GET"])
 def chatmesg():
     try:
