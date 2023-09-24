@@ -76,6 +76,13 @@ def chatmesg():
         return jsonify(message=message)
     except Exception as err:
         return jsonify(error=str(err)), 404
+
+@app.route("/api/getkey", methods=["GET"])
+def getkey():
+    try:
+        return jsonify(key=openai_api_key)
+    except Exception as err:
+        return jsonify(error=str(err)), 404
     
 if __name__ == "__main__":
     print(prompt.system_message)
