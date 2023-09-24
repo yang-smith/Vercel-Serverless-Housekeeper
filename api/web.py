@@ -62,7 +62,7 @@ def post():
 def chatmesg():
     try:
         messages = request.args.get("messages", "")
-        messages = unquote(messages)  # 解码URL参数
+        messages = unquote(messages)  
         messages = json.loads(messages)
         print(messages)
         response = openai.ChatCompletion.create(
